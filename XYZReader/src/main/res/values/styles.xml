@@ -21,6 +21,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="android:textColorSecondary">@android:color/primary_text_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="TransparentTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
@@ -29,6 +30,7 @@
 
     <style name="VisibleTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
         <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:layout_marginStart">@dimen/page_title_start_margin</item>
     </style>
 
 </resources>
