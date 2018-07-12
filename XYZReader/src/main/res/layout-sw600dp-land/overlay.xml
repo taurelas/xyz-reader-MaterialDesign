@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            tools:text="My title" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            tools:text="My subtitle" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/accent"
+        android:contentDescription="@string/action_share"
+        android:elevation="@dimen/fab_elevation"
+        android:stateListAnimator="@animator/fab_state_list_anim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+        app:srcCompat="@drawable/ic_share" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/primary_dark"
+        app:behavior_overlapTop="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+        <TextView
+            android:id="@+id/article_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/article_body_horizontal_margin"
+            android:layout_marginStart="@dimen/article_body_horizontal_margin"
+            android:background="@color/primary_light"
+            android:fontFamily="sans-serif"
+            android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+            android:paddingBottom="@dimen/detail_body_bottom_margin"
+            android:paddingEnd="@dimen/article_body_horizontal_padding"
+            android:paddingStart="@dimen/article_body_horizontal_padding"
+            android:paddingTop="@dimen/article_body_top_padding"
+            android:textColor="@color/primary_text"
+            android:textColorLink="@color/accent"
+            android:textSize="@dimen/detail_body_text_size"
+            android:typeface="normal"
+             />
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

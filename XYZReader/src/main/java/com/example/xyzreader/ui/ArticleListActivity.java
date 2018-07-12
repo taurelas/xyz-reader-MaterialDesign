@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -64,7 +65,11 @@ public class ArticleListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar_layout);
+        final AppBarLayout appBarLayout = findViewById(R.id.toolbar_container);
+
+        if(appBarLayout!=null) {
+            appBarLayout.setExpanded(getResources().getBoolean(R.bool.expanded_toolbar));
+        }
 
         Toolbar mToolbar = findViewById(R.id.toolbar);
 
@@ -75,7 +80,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         //mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = findViewById(R.id.recycler_view);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, getResources().getConfiguration().orientation));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
 
         getLoaderManager().initLoader(0, null, this);

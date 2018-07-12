@@ -28,7 +28,7 @@
                     android:id="@+id/photo"
                     android:scaleType="centerCrop"
                     android:layout_width="match_parent"
-                    android:layout_height="336dp"
+                    android:layout_height="@dimen/header_height"
                     />
 
                 <LinearLayout
@@ -79,20 +79,23 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primary_light"
+        android:background="@color/primary_dark"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
             android:id="@+id/article_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/article_body_top_margin"
-            android:layout_marginLeft="@dimen/article_body_h_margin"
-            android:layout_marginRight="@dimen/article_body_h_margin"
+            android:paddingTop="@dimen/article_body_top_padding"
+            android:paddingStart="@dimen/article_body_horizontal_padding"
+            android:paddingEnd="@dimen/article_body_horizontal_padding"
+            android:paddingBottom="@dimen/detail_body_bottom_margin"
+            android:layout_marginStart="@dimen/article_body_horizontal_margin"
+            android:layout_marginEnd="@dimen/article_body_horizontal_margin"
             android:background="@color/primary_light"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-            android:paddingBottom="@dimen/detail_body_bottom_margin"
+
             android:textColor="@color/primary_text"
             android:textColorLink="@color/accent"
             android:textSize="@dimen/detail_body_text_size"
@@ -103,7 +106,7 @@
         android:id="@+id/share_fab"
         android:stateListAnimator="@animator/fab_state_list_anim"
         android:background="@color/accent"
-        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
