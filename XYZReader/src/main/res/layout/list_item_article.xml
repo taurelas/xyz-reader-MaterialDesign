@@ -1,38 +1,41 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
+    android:id="@+id/listItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp"
-    android:layout_marginLeft="4dp"
+    android:layout_marginBottom="0dp"
+    android:layout_marginLeft="0dp"
     android:layout_marginRight="4dp"
-    android:layout_marginTop="4dp"
+    android:layout_marginTop="0dp"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    tools:context=".ui.ArticleListActivity"
+    android:foreground="@drawable/rv_click"
+    >
 
 
     <!--suppress AndroidLintContentDescription -->
     <com.example.xyzreader.ui.DynamicHeightNetworkImageView
         android:id="@+id/thumbnail"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:background="@color/primary_light"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/empty_detail" />
 
     <TextView
         android:id="@+id/article_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-
         android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="4"
@@ -40,7 +43,8 @@
         app:layout_constraintBottom_toTopOf="@+id/article_subtitle"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Article Title" />
 
     <TextView
         android:id="@+id/article_subtitle"
@@ -53,14 +57,15 @@
         android:textColor="@color/secondary_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/article_title" />
+        app:layout_constraintTop_toBottomOf="@+id/article_title"
+        tools:text="Article Subtitle" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="116dp" />
+        app:layout_constraintGuide_begin="120dp" />
 
 
 </android.support.constraint.ConstraintLayout>

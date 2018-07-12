@@ -1,5 +1,7 @@
 package com.example.xyzreader.ui;
 
+import android.animation.Animator;
+import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -25,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -48,7 +51,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = ArticleListActivity.class.toString();
-    private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
@@ -82,7 +84,7 @@ public class ArticleListActivity extends AppCompatActivity implements
             refresh();
         }
 
-        ViewCompat.setElevation(collapsingToolbarLayout, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, getResources().getDisplayMetrics()));
+       // ViewCompat.setElevation(collapsingToolbarLayout, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 24, getResources().getDisplayMetrics()));
     }
 
     private void refresh() {
@@ -158,9 +160,17 @@ public class ArticleListActivity extends AppCompatActivity implements
             final ViewHolder vh = new ViewHolder(view);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onClick(View childView) {
+                    Bundle bundle = null;
+
+                /*    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        bundle = ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this)
+                                .toBundle();
+                    }*/
+
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), bundle);
+
                 }
             });
             return vh;
