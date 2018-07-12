@@ -94,14 +94,14 @@
             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
             android:paddingBottom="@dimen/detail_body_bottom_margin"
             android:textColor="@color/primary_text"
-            android:textColorLink="@color/theme_accent"
+            android:textColorLink="@color/accent"
             android:textSize="@dimen/detail_body_text_size"
             android:typeface="normal" />
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:stateListAnimator="@anim/fab_state_list_anim"
+        android:stateListAnimator="@animator/fab_state_list_anim"
         android:background="@color/accent"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"

@@ -10,5 +10,6 @@
     <dimen name="fab_size">56dp</dimen>
     <dimen name="header_height">336dp</dimen>
     <dimen name="article_body_h_margin">16dp</dimen>
+    <dimen name="list_item_height">88dp</dimen>
 
 </resources>
