@@ -47,10 +47,11 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
         android:contentDescription="@string/action_share"
-        app:elevation="@dimen/fab_elevation"
+        android:elevation="@dimen/fab_elevation"
+        android:stateListAnimator="@animator/fab_state_list_anim"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:backgroundTint="@color/accent"
+        android:backgroundTint="@color/accent"
         app:pressedTranslationZ="@dimen/fab_press_translation_z"
         app:srcCompat="@drawable/ic_share" />
 
