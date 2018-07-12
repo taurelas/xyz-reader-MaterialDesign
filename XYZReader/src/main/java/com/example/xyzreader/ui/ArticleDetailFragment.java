@@ -56,7 +56,6 @@ public class ArticleDetailFragment extends Fragment implements
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private NestedScrollView mScrollView;
-    private CoordinatorLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
 
     private int mTopInset;
@@ -114,8 +113,8 @@ public class ArticleDetailFragment extends Fragment implements
         // fragments because their mIndex is -1 (haven't been added to the activity yet). Thus,
         // we do this in onActivityCreated.
         getLoaderManager().initLoader(0, null, this);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       /* ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
     }
 
@@ -123,9 +122,7 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mDrawInsetsFrameLayout =
-                mRootView.findViewById(R.id.draw_insets_frame_layout);
-        /*mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
+          /*mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
             @Override
             public void onInsetsChanged(Rect insets) {
                 mTopInset = insets.top;

@@ -4,4 +4,7 @@
 
     <dimen name="detail_photo_height">600dp</dimen>
     <dimen name="detail_card_top_margin">256dp</dimen>
+    <bool name="expanded_toolbar">true</bool>
+    <integer name="list_column_count">3</integer>
+    <dimen name="article_body_horizontal_margin">16dp</dimen>
 </resources>
